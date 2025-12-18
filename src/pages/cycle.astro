@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/CycleLayout.astro";
+import ThemeSwitch from "../components/ThemeSwitch.vue";
+import StatsDashboard from "../components/CycleDashboard.vue";
+import HomeLogo from "../components/Cycle.vue";
+import {
+  Route
+} from "@lucide/astro";
+---
+
+<BaseLayout>
+
+<header class="app-bar">
+  <div class="app-bar-inner">
+    <HomeLogo client:load />
+    <ThemeSwitch client:load />
+  </div>
+</header>
+
+<section class="hero-section">
+  <Route />
+  <h1 class="hero-title">My Cycling Statistics From Strava</h1>
+  <p class="hero-sub">
+    covers current week, month, and year
+  </p>
+</section>
+
+<StatsDashboard client:load />
+
+</BaseLayout>

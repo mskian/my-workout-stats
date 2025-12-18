@@ -1,0 +1,27 @@
+---
+import "../styles/theme.css";
+const year = new Date().getFullYear();
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link href="/192.png" rel="icon" sizes="192x192" type="image/png">
+  <title>Live Step Tracker</title>
+  <meta name="description" content="Live Step Count Analysis from Zepp and Health Connect by Google.">
+  <link rel="canonical" href="https://fit.santhoshveer.com/steps/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+<slot />
+<footer class="footer-note">
+© {year} · Data from Zepp and Health Connect by Google • Built with {Astro.generator}
+</footer>
+</body>
+</html>

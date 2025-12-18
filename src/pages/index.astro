@@ -1,0 +1,129 @@
+---
+import ThemeSwitch from "../components/ThemeSwitch.vue";
+import {
+  Activity,
+  ArrowRight,
+  TrendingUp,
+  Route,
+  Footprints
+} from "@lucide/astro";
+import "../styles/home.css";
+
+const year = new Date().getFullYear();
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/192.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/favicon.ico"
+    />
+    <title>My Workout Stats</title>
+    <meta
+      name="description"
+      content="My Workout Stats - Cycling and Running statistics covers current week, month, and year."
+    />
+    <link rel="canonical" href="https://fit.santhoshveer.com/" />
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&display=swap">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="app-bar">
+      <div class="container app-bar-inner">
+        <Activity size={22} class="logo-icon" />
+        <ThemeSwitch client:load />
+      </div>
+    </header>
+    <section class="hero-section">
+      <div class="container has-text-centered">
+        <h1 class="hero-title">
+          <TrendingUp size={35}/> <br />
+          My Workout Stats
+        </h1>
+        <p class="hero-subtitle">
+          Cycling, Running and Live Step Data
+        </p>
+      </div>
+    </section>
+    <main class="section">
+      <div class="container">
+        <div class="columns is-multiline is-centered">
+
+          <div class="column is-12-mobile is-4-tablet">
+            <div class="m-card holiday">
+              <div class="m-icon holiday">
+                <Route size={26} />
+              </div>
+              <h2 class="m-title">Cycling Statistics</h2>
+              <p class="m-text">
+                My Cycling Statistics From Strava - covers current week, month, and year
+              </p>
+              <a href="/cycle/" class="m-cta button is-warning is-rounded mt-4" data-astro-prefetch="viewport">
+                View <ArrowRight size={20} />
+              </a>
+            </div>
+          </div>
+
+          <div class="column is-12-mobile is-4-tablet">
+            <div class="m-card terminal">
+              <div class="m-icon terminal">
+                <Route size={26} />
+              </div>
+              <h2 class="m-title">Running Statistics</h2>
+              <p class="m-text">
+                My Running Statistics From Strava - covers current week, month, and year
+              </p>
+              <a href="/run/" class="m-cta button is-danger is-rounded mt-4" data-astro-prefetch="viewport">
+                View <ArrowRight size={20} />
+              </a>
+            </div>
+          </div>
+
+          <div class="column is-12-mobile is-4-tablet">
+            <div class="m-card tamil">
+              <div class="m-icon tamil">
+                <Footprints size={26} />
+              </div>
+              <h2 class="m-title">Live Step Tracker</h2>
+              <p class="m-text">
+                Live Step Count Analysis from Zepp and Health Connect by Google
+              </p>
+              <a href="/steps/" class="m-cta button is-info is-rounded mt-4" data-astro-prefetch="viewport">
+                View <ArrowRight size={20} />
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer-note">
+      © {year} • fit.santhoshveer.com • Built with {Astro.generator}
+    </footer>
+
+</body>
+</html>

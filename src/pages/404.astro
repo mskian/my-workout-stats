@@ -1,0 +1,127 @@
+---
+import "../styles/home.css";
+import { MessageCircleWarning, CircleAlert } from "@lucide/astro";
+import ThemeSwitch from "../components/ThemeSwitch.vue";
+const year = new Date().getFullYear();
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 – Page Not Found</title>
+  <meta
+    name="description"
+    content="404 error – The page you are looking for could not be found."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&display=swap" rel="stylesheet">
+  <meta name="robots" content="noindex, follow" />
+</head>
+<body>
+  <header class="app-bar">
+    <div class="container app-bar-inner">
+        <MessageCircleWarning size={22} class="logo-icon" />
+        <ThemeSwitch client:load />
+    </div>
+  </header>
+  <section class="hero-section">
+    <div class="container has-text-centered">
+    <h1 class="hero-title">404</h1>
+    <p class="hero-sub">
+      Sorry, the page you’re looking for doesn’t exist.
+    </p>
+  </section>
+  <section class="section">
+    <div class="container">
+
+      <div class="columns is-centered">
+        <div class="column is-6">
+
+          <div class="m-card notfound-card">
+
+            <div class="m-icon not">
+              <CircleAlert size={22} />
+            </div>
+
+            <div class="has-text-black">Page not available</div>
+
+            <p class="notfound-text">
+              The link might be broken, removed, or temporarily unavailable.
+            </p>
+
+            <div class="notfound-actions">
+              <a href="/" class="notfound-btn primary">
+                Go Home
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </section>
+
+  <footer class="footer-note">
+    © {year} · Built with {Astro.generator}
+  </footer>
+
+  <style>
+    .notfound-card {
+      background: linear-gradient(90deg, #f3abcf, #f17a8a);
+      padding: 2.2rem 2rem;
+    }
+
+    .notfound-text {
+      margin-top: 0.6rem;
+      font-family: "Mozilla Headline", sans-serif;
+      font-size: 0.9rem;
+      color: #070202;
+      line-height: 1.6;
+    }
+
+    .notfound-actions {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-top: 1.6rem;
+      flex-wrap: wrap;
+    }
+
+    .notfound-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.55rem 0.95rem;
+      font-family: "Mozilla Headline", sans-serif;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: var(--surface);
+      color: var(--text-primary);
+    }
+
+    .notfound-btn.primary {
+      background: linear-gradient(90deg, #d8d64a, #e3f15c);
+      font-family: "Mozilla Headline", sans-serif;
+      color: #070202;
+      border: none;
+    }
+
+    .notfound-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.2);
+    }
+  </style>
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+@import "bulma/css/bulma.min.css";
+
+:root {
+  --bg: linear-gradient(180deg, #fff7ed 0%, #fdf2f8 100%);
+
+  --header-bg: linear-gradient(90deg, #7c3aed, #db2777);
+  --footer-bg: #1f2937;
+
+  --surface: #ffffff;
+  --text: #191c20;
+  --muted: #191a1b;
+
+  --holiday-bg: linear-gradient(180deg, #fef3c7, #fde68a);
+  --terminal-bg: linear-gradient(180deg, #e0f2fe, #bae6fd);
+  --tamil-bg: linear-gradient(180deg, #dcfce7, #bbf7d0);
+
+  --border: rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="dark"] {
+  --bg: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+
+  --header-bg: linear-gradient(90deg, #6366f1, #9333ea);
+  --footer-bg: #020617;
+
+  --surface: #1e293b;
+  --text: #fbfcff;
+  --muted: #cfd4db;
+
+  --holiday-bg: linear-gradient(180deg, #3b2f14, #4a3b17);
+  --terminal-bg: linear-gradient(180deg, #0b2545, #123c66);
+  --tamil-bg: linear-gradient(180deg, #0f3d2e, #14532d);
+
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+
+html,
+body {
+  font-family: "Mozilla Text", sans-serif;
+  min-height: 100svh;
+}
+
+body {
+  background: var(--bg);
+  font-family: "Mozilla Text", sans-serif;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+
+.app-bar {
+  background: var(--header-bg);
+  color: #fff;
+}
+
+.app-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1rem;
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.logo-icon {
+  color: #fff;
+}
+
+.logo-text {
+  font-family: "Mozilla Text", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.theme-btn {
+  min-width: 36px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+html[data-theme="dark"] #iconLight {
+  display: none;
+}
+html[data-theme="light"] #iconDark {
+  display: none;
+}
+
+
+.hero-section {
+  padding: 3rem 1rem 2.2rem;
+}
+
+.hero-title {
+  font-family: "Mozilla Text", sans-serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-family: "Mozilla Text", sans-serif;
+  font-size: 0.9rem;
+  margin-top: 0.45rem;
+  color: var(--muted);
+}
+
+.hero-sub {
+  font-family: "Mozilla Text", sans-serif;
+  font-weight: 600;
+}
+
+.m-card {
+  display: block;
+  height: 100%;
+  padding: 1.6rem 1.4rem;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  font-family: "Mozilla Text", sans-serif;
+  text-align: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.m-card.holiday {
+  background: var(--holiday-bg);
+}
+
+.m-card.terminal {
+  background: var(--terminal-bg);
+}
+
+.m-card.tamil {
+  background: var(--tamil-bg);
+}
+
+.m-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.m-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin: 0 auto 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.m-icon.holiday {
+  color: #b45309;
+}
+
+.m-icon.terminal {
+  color: #0369a1;
+}
+
+.m-icon.tamil {
+  color: #047857;
+}
+
+.m-icon.not {
+  color: #101111;
+}
+
+.m-title {
+  font-family: "Mozilla Text", sans-serif;
+  font-size: 0.96rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.m-text {
+  font-family: "Mozilla Text", sans-serif;
+  font-size: 0.83rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.m-cta {
+  gap: 0.25rem;
+  font-family: "Mozilla Text", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+
+}
+
+.footer-note {
+  background: transparent;
+  color: var(--muted);
+  text-align: center;
+  font-family: "Mozilla Text", sans-serif;
+  font-size: 0.75rem;
+  padding: 1.4rem 1rem 1.6rem;
+}

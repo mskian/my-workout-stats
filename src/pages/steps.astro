@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/StepsLayout.astro";
+import ThemeSwitch from "../components/ThemeSwitch.vue";
+import HomeLogo from "../components/Live.vue";
+import LiveStepsDashboard from "../components/LiveStepsDashboard.vue";
+import {
+  Footprints
+} from "@lucide/astro";
+---
+
+<BaseLayout>
+
+<header class="app-bar">
+  <div class="app-bar-inner">
+    <HomeLogo client:load />
+    <ThemeSwitch client:load />
+  </div>
+</header>
+
+<section class="hero-section">
+  <Footprints />
+  <h1 class="hero-title">Live Step Tracker</h1>
+  <p class="hero-sub">
+    Live Step Count Analysis from Zepp and Health Connect by Google
+  </p>
+</section>
+
+<LiveStepsDashboard client:load />
+
+</BaseLayout>
