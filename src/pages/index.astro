@@ -139,5 +139,16 @@ const year = new Date().getFullYear();
       © {year} • fit.santhoshveer.com • Built with {Astro.generator}
     </footer>
 
+<script>
+(function () {
+  const t = localStorage.getItem("ui-theme");
+  const s = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.setAttribute(
+    "data-theme",
+    t || (s ? "dark" : "light")
+  );
+})();
+</script>
+
 </body>
 </html>

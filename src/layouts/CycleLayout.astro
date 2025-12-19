@@ -23,5 +23,15 @@ const year = new Date().getFullYear();
 <footer class="footer-note">
 © {year} · Data from Strava • Built with {Astro.generator}
 </footer>
+<script>
+(function () {
+  const t = localStorage.getItem("ui-theme");
+  const s = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.setAttribute(
+    "data-theme",
+    t || (s ? "dark" : "light")
+  );
+})();
+</script>
 </body>
 </html>
