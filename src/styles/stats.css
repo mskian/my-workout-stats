@@ -1,0 +1,118 @@
+@import "bulma/css/bulma.min.css";
+
+:root {
+  --radius: 26px;
+  --accent: #ff6d00;
+}
+
+html[data-theme="dark"] {
+  --bg: #000000;
+  --card: #121212;
+  --text: #ffffff;
+  --muted: #bdbdbd;
+}
+
+html[data-theme="light"] {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --text: #111111;
+  --muted: #666666;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  font-family: "Mozilla Text", sans-serif;
+}
+
+.card-amoled {
+  width: 100%;
+  max-width: 420px;
+  margin-inline: auto;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  font-family: "Mozilla Text", sans-serif;
+}
+
+.title.is-4 {
+  font-family: "Mozilla Text", sans-serif;
+  font-size: clamp(1.2rem, 3.5vw, 1.4rem);
+  margin-bottom: 0;
+}
+
+.stat-value {
+  line-height: 1.1;
+}
+
+.stat-label {
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-family: "Mozilla Text", sans-serif;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.stat-value {
+  font-family: "Mozilla Text", sans-serif;
+  font-size: clamp(2rem, 5vw, 2.7rem);
+  font-weight: 800;
+}
+
+.year-strip {
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    color-mix(in srgb, var(--accent), white 35%)
+  );
+  color: #000;
+  font-family: "Mozilla Text", sans-serif;
+  font-weight: 900;
+  text-align: center;
+  padding: 0.9rem;
+  border-radius: 16px;
+  letter-spacing: 1px;
+}
+
+.theme-pill {
+  background: var(--card);
+  border-radius: 999px;
+  padding: 0.45rem;
+  display: inline-flex;
+  font-family: "Mozilla Text", sans-serif;
+  gap: 0.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.accent-icon {
+  color: var(--accent);
+}
+/* Tablets */
+@media (min-width: 768px) {
+  .card-amoled {
+    max-width: 460px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-amoled {
+    max-width: 480px;
+  }
+}
+
+.stat-badge {
+  width: clamp(44px, 10vw, 56px);
+  height: clamp(44px, 10vw, 56px);
+  border-radius: 16px;
+  background: var(--accent);
+  font-family: "Mozilla Text", sans-serif;
+  color: #000;
+}
+
+.year-strip {
+  font-family: "Mozilla Text", sans-serif;
+  font-size: clamp(0.85rem, 3vw, 1rem);
+  padding: clamp(0.7rem, 3vw, 0.9rem);
+}
