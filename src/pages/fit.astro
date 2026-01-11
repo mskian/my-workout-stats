@@ -1,0 +1,19 @@
+---
+import FitLayout from "../layouts/FitLayout.astro";
+import ThemeSwitch from "../components/ThemeSwitch.vue";
+import StatsDashboard from "../components/FitDashboard.vue";
+import HomeLogo from "../components/Fit.vue";
+---
+
+<FitLayout>
+
+<header class="app-bar">
+  <div class="app-bar-inner">
+    <HomeLogo client:load />
+    <ThemeSwitch client:load />
+  </div>
+</header>
+
+<StatsDashboard client:load />
+
+</BFitLayout>
